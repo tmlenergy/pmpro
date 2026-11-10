@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TML PM Pro</title>
+
+    <!-- Favicon default (light mode) -->
+    <link id="favicon" rel="icon" type="image/png"
+          href="https://raw.githubusercontent.com/akmalsetiardi/pmpro/refs/heads/main/Logo%20Resmi%20hitam.png">
+
+    <script>
+        (function () {
+            var base  = 'https://raw.githubusercontent.com/akmalsetiardi/pmpro/refs/heads/main/';
+            var light = base + 'Logo%20Resmi%20hitam.png'; // logo hitam untuk tema terang
+            var dark  = base + 'Logo%20Resmi.png';         // logo terang untuk tema gelap
+
+            var mq   = window.matchMedia('(prefers-color-scheme: dark)');
+            var link = document.getElementById('favicon');
+
+            function updateFavicon() {
+                link.href = mq.matches ? dark : light;
+            }
+
+            updateFavicon();
+            // Ikut berubah saat tema browser/OS diganti
+            if (mq.addEventListener) mq.addEventListener('change', updateFavicon);
+            else mq.addListener(updateFavicon); // browser lama
+        })();
+    </script>
+
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { border: none; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <iframe src="https://script.google.com/macros/s/AKfycbyzYP9desKW7w5iQXJmvWfUqm57TFL3nlm1vjbeGKaCG-o3H1_a9JBB4DBD2FU0FVMMjg/exec"></iframe>
+</body>
+</html>
